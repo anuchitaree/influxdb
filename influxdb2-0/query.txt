@@ -1,0 +1,31 @@
+from(bucket: "result")
+  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+  |> filter(fn: (r) => r["_measurement"] == "lne14202")
+  |> filter(fn: (r) => r["_field"] == "z5_water_temp_out" or r["_field"] == "z5_water_temp_in" or r["_field"] == "z5_water_flow_rate_in" or r["_field"] == "z5_revolution" or r["_field"] == "z5_electrical_current" or r["_field"] == "z5_omron_vibration_temp" or r["_field"] == "z5_velocity" or r["_field"] == "all_mc_production_target" or r["_field"] == "factory_id" or r["_field"] == "heater_on" or r["_field"] == "line_id" or r["_field"] == "machine_id" or r["_field"] == "master_on" or r["_field"] == "production_actual_total" or r["_field"] == "production_actual_shift" or r["_field"] == "z1_electrical_current" or r["_field"] == "z1_omron_vibration_temp" or r["_field"] == "z1_velocity" or r["_field"] == "z1_water_flow_rate_in" or r["_field"] == "z1_revolution" or r["_field"] == "z3_z_vibration_peak_acceleration" or r["_field"] == "z4_electrical_current" or r["_field"] == "z3_z_vibration_rms_acceleration" or r["_field"] == "z3_z_axis_rms_acceleration_freq" or r["_field"] == "z3_z_vibration_peak_velocity" or r["_field"] == "z3_z_vibration_rms_velocity" or r["_field"] == "z4_omron_vibration_temp" or r["_field"] == "z4_water_flow_rate_in" or r["_field"] == "z4_velocity" or r["_field"] == "z4_revolution" or r["_field"] == "z4_water_flow_rate_out" or r["_field"] == "z4_water_temp_in" or r["_field"] == "z4_water_temp_out" or r["_field"] == "z4_x_axis_peak_velocity" or r["_field"] == "z5_x_axis_peak_velocity" or r["_field"] == "z5_x_axis_peak_velocity_freq" or r["_field"] == "z5_x_axis_rms_acceleration_freq" or r["_field"] == "z5_x_axis_rms_velocity" or r["_field"] == "z5_x_vibration_peak_acceleration" or r["_field"] == "z5_x_vibration_rms_acceleration" or r["_field"] == "z5_z_accelation" or r["_field"] == "z5_z_vibration_peak_acceleration" or r["_field"] == "z5_z_axis_peak_velocity_freq" or r["_field"] == "z5_z_axis_rms_acceleration_freq" or r["_field"] == "z5_z_vibration_peak_velocity" or r["_field"] == "z5_z_vibration_rms_acceleration" or r["_field"] == "z5_z_vibration_rms_velocity" or r["_field"] == "z5_water_flow_rate_out" or r["_field"] == "z4_z_vibration_rms_velocity" or r["_field"] == "z4_z_vibration_rms_acceleration" or r["_field"] == "z4_z_vibration_peak_velocity" or r["_field"] == "z4_z_vibration_peak_acceleration" or r["_field"] == "z4_z_axis_peak_velocity_freq" or r["_field"] == "z4_z_axis_rms_acceleration_freq" or r["_field"] == "z1_water_temp_in" or r["_field"] == "z1_water_temp_out" or r["_field"] == "z1_x_axis_peak_velocity_freq" or r["_field"] == "z1_x_axis_peak_velocity" or r["_field"] == "z1_x_axis_rms_velocity" or r["_field"] == "z1_x_axis_rms_acceleration_freq" or r["_field"] == "z1_x_vibration_peak_acceleration" or r["_field"] == "z1_x_vibration_rms_acceleration" or r["_field"] == "z1_z_axis_peak_velocity_freq" or r["_field"] == "z1_z_axis_rms_acceleration_freq" or r["_field"] == "z1_z_accelation" or r["_field"] == "z1_z_vibration_peak_acceleration" or r["_field"] == "z1_z_vibration_peak_velocity" or r["_field"] == "z1_z_vibration_rms_acceleration" or r["_field"] == "z2_electrical_current" or r["_field"] == "z2_omron_vibration_temp" or r["_field"] == "z2_velocity" or r["_field"] == "z2_water_flow_rate_out" or r["_field"] == "z2_water_temp_out" or r["_field"] == "z2_revolution" or r["_field"] == "z2_water_flow_rate_in" or r["_field"] == "z1_z_vibration_rms_velocity" or r["_field"] == "z2_water_temp_in" or r["_field"] == "z4_x_axis_peak_velocity_freq" or r["_field"] == "z4_x_axis_rms_acceleration_freq" or r["_field"] == "z4_x_axis_rms_velocity" or r["_field"] == "z4_x_vibration_peak_acceleration" or r["_field"] == "z4_x_vibration_rms_acceleration" or r["_field"] == "z4_z_accelation" or r["_field"] == "z3_z_axis_peak_velocity_freq" or r["_field"] == "z3_z_accelation" or r["_field"] == "z3_x_vibration_peak_acceleration" or r["_field"] == "z3_x_axis_rms_velocity" or r["_field"] == "z3_x_vibration_rms_acceleration" or r["_field"] == "z3_x_axis_rms_acceleration_freq" or r["_field"] == "z3_x_axis_peak_velocity_freq" or r["_field"] == "z3_x_axis_peak_velocity" or r["_field"] == "z3_water_temp_out" or r["_field"] == "z3_water_temp_in" or r["_field"] == "z3_water_flow_rate_out" or r["_field"] == "z3_velocity" or r["_field"] == "z3_revolution" or r["_field"] == "z3_omron_vibration_temp" or r["_field"] == "z3_electrical_current" or r["_field"] == "z3_water_flow_rate_in" or r["_field"] == "z2_z_vibration_rms_velocity" or r["_field"] == "z2_z_vibration_rms_acceleration" or r["_field"] == "z2_z_vibration_peak_velocity" or r["_field"] == "z2_z_axis_rms_acceleration_freq" or r["_field"] == "z2_z_axis_peak_velocity_freq" or r["_field"] == "z2_z_accelation" or r["_field"] == "z2_x_vibration_rms_acceleration" or r["_field"] == "z2_z_vibration_peak_acceleration" or r["_field"] == "z2_x_vibration_peak_acceleration" or r["_field"] == "z2_x_axis_rms_velocity" or r["_field"] == "z2_x_axis_rms_acceleration_freq" or r["_field"] == "z2_x_axis_peak_velocity_freq" or r["_field"] == "z2_x_axis_peak_velocity" or r["_field"] == "z1_water_flow_rate_out")
+  |> aggregateWindow(every: v.windowPeriod, fn: max, createEmpty: false)
+  |> yield(name: "max")
+
+
+  {
+  "Table": 0,
+  "Values": {
+    "result": "_result",
+    "table": 0,
+    "_start": "2026-05-25T08:41:22.281485867Z",
+    "_stop": "2026-05-27T08:41:22.281485867Z",
+    "_time": "2026-05-25T08:41:25.777Z",
+    "_value": 250000.0,
+    "_field": "all_mc_production_target",
+    "_measurement": "lne14202"
+  },
+  "Row": [
+    "_result",
+    0,
+    "2026-05-25T08:41:22.281485867Z",
+    "2026-05-27T08:41:22.281485867Z",
+    "2026-05-25T08:41:25.777Z",
+    250000.0,
+    "all_mc_production_target",
+    "lne14202"
+  ]
+}

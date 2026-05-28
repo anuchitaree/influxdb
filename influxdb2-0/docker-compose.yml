@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  influxdb:
+    image: influxdb:2.6
+    container_name: influxdb2-6
+    ports:
+      - 8086:8086
+    volumes:
+      - D:\Database\influx_data\data:/var/lib/influxdb2
+      - D:\Database\influx_data\config:/etc/influxdb2
+      - D:\Database\influx_data\backup:/backup
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: test-password
+      DOCKER_INFLUXDB_INIT_ORG: influxdata
+      DOCKER_INFLUXDB_INIT_BUCKET: test-bucket 
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: my-super-secret-token
+    restart: unless-stopped
+    networks:
+      - backend-net
+# volumes:
+#  D:\Database\influx_data\data:
+#  D:\Database\influx_data\config:
+
+networks:
+  backend-net:
+    external: true
+
+
+
+# docker exec -it influxdb2-6 influx restore /backup --org influxdata --bucket result
