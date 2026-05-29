@@ -1,0 +1,22 @@
+﻿version: '3.9'
+
+services:
+
+  mqtt-worker:
+    build: .
+
+    container_name: mqtt-worker
+
+    restart: always
+
+    volumes:
+      - ./data:/data
+
+    environment:
+      - DOTNET_ENVIRONMENT=Production
+
+    networks:
+      - backend
+
+networks:
+  backend:
