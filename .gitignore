@@ -1,2 +1,5 @@
-.vs/
-bin/
+Influxdb-client/.vs/
+Influxdb-client/bin/
+
+messagequque/.vs/
+messagequque/bin/

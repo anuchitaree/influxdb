@@ -1,0 +1,7 @@
+﻿dotnet add package MQTTnet --version 5.1.0.1559
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite --version 8.0.27
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.27
+
+dotnet add package Microsoft.Extensions.Http --version 8.0.1
+
+dotnet add package Microsoft.Extensions.Http.Resilience --version 10.6.0
